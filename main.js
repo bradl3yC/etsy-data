@@ -30,7 +30,7 @@ function question2() {
 function question3 () {
   data.forEach(function(dataEntry) {
     if (dataEntry.currency_code === "GBP")
-      console.log(dataEntry.title)
+      console.log(dataEntry.title + " costs " + dataEntry.price + " pounds")
   })
 }
 
