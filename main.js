@@ -46,11 +46,12 @@ function question4 () {
 //    Display the name, number of items and the items it is made of.
 function question5 () {
   data.forEach(function(dataEntry) {
-    if (dataEntry.materials.length >= 8)
-      console.log(dataEntry.title)
-      for (let i = 0; i <= dataEntry.materials.length; i++) {
-        console.log("-" + dataEntry.material)
+    if (dataEntry.materials.length >= 8) {
+      console.log(dataEntry.title + " has " + dataEntry.materials.length + " materials")
+      for (var i = 0; i < dataEntry.materials.length; i++) {
+        console.log("-" + dataEntry.materials[i])
       }
+    }
   })
 }
 
@@ -58,5 +59,11 @@ function question5 () {
 // 6: How many items were made by their sellers?
 // Answer:
 function question6 () {
-  // Answer:
+  let i = 0
+  data.forEach(function(dataEntry) {
+    if (dataEntry.who_made === "i_did") {
+      i++
+    }
+  })
+  console.log(i + " items were made by their sellers")
 }
