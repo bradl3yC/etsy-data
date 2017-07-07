@@ -16,28 +16,42 @@ function question1() {
 
 
 // 2: Show me how to get an array of items that cost between $14.00 and $18.00 USD
-function question2 () {
-  // Answer:
+function question2() {
+  data.forEach(function(dataEntry) {
+    if (dataEntry.price > 14.00 && dataEntry.price < 18.00)
+      console.log(dataEntry.title)
+  })
 }
-
 
 
 // 3: Which item has a "GBP" currency code? Display it's name and price.
 function question3 () {
-  // Answer:
+  data.forEach(function(dataEntry) {
+    if (dataEntry.currency_code === "GBP")
+      console.log(dataEntry.title)
+  })
 }
 
 
 // 4: Display a list of all items who are made of wood.
 function question4 () {
-  // Answer:
+  data.forEach(function(dataEntry) {
+    if (dataEntry.materials.includes("wood"))
+      console.log(dataEntry.title)
+  })
 }
 
 
 // 5: Which items are made of eight or more materials?
 //    Display the name, number of items and the items it is made of.
 function question5 () {
-  // Answer:
+  data.forEach(function(dataEntry) {
+    if (dataEntry.materials.length >= 8)
+      console.log(dataEntry.title)
+      for (let i = 0; i <= dataEntry.materials.length; i++) {
+        console.log("-" + dataEntry.material)
+      }
+  })
 }
 
 
