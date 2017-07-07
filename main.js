@@ -17,10 +17,12 @@ function question1() {
 
 // 2: Show me how to get an array of items that cost between $14.00 and $18.00 USD
 function question2() {
+  let itemsInCostRange = []
   data.forEach(function(dataEntry) {
     if (dataEntry.price > 14.00 && dataEntry.price < 18.00)
-      console.log(dataEntry.title)
+      itemsInCostRange.push(dataEntry.title)
   })
+  console.log(itemsInCostRange)
 }
 
 
