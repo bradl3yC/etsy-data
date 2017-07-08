@@ -6,11 +6,11 @@
 
 // 1: Show me how to calculate the average price of all items.
 function question1() {
-  let averageCost = 0
+  let totalCost = 0
   data.forEach(function(dataEntry) {
     averageCost += dataEntry.price
   })
-  let averagePrice = (averageCost / data.length).toFixed(2)  // rounding up to 24 :-/
+  let averagePrice = (totalCost / data.length).toFixed(2)  // rounding up to 24 :-/
   console.log('The average price is $' + averagePrice)
 }
 
