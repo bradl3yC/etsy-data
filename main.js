@@ -8,7 +8,7 @@
 function question1() {
   let totalCost = 0
   data.forEach(function(dataEntry) {
-    averageCost += dataEntry.price
+    totalCost += dataEntry.price
   })
   let averagePrice = (totalCost / data.length).toFixed(2)  // rounding up to 24 :-/
   console.log('The average price is $' + averagePrice)
