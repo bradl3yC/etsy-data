@@ -34,10 +34,12 @@ function question3 () {
 
 // 4: Display a list of all items who are made of wood.
 function question4 () {
-  data.forEach(function(dataEntry) {
-    if (dataEntry.materials.includes("wood"))
-      console.log(dataEntry.title)
+  let woodItems = data.filter(function(item) {
+    return item.materials.includes("wood")
+  }).map(function(item) {
+    return item.title
   })
+  console.log(woodItems)
 }
 
 // 5: Which items are made of eight or more materials?
