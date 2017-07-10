@@ -14,26 +14,23 @@ function question1() {
   console.log('The average price is $' + averagePrice)
 }
 
-
 // 2: Show me how to get an array of items that cost between $14.00 and $18.00 USD
 function question2() {
-  let itemsInCostRange = []
-  data.forEach(function(dataEntry) {
-    if (dataEntry.price > 14.00 && dataEntry.price < 18.00)
-      itemsInCostRange.push(dataEntry.title)
+  data.filter(function(item) {
+    return item.price > 14 && item.price < 18.00
+  }).forEach(function(item) {
+    console.log(item.title)
   })
-  console.log(itemsInCostRange)
 }
-
 
 // 3: Which item has a "GBP" currency code? Display it's name and price.
-function question3 () {
-  data.forEach(function(dataEntry) {
-    if (dataEntry.currency_code === "GBP")
-      console.log(dataEntry.title + " costs " + dataEntry.price + " pounds")
-  })
+function isGbp(item) {
+  return item.currency_code === "GBP"
 }
 
+function question3 () {
+  console.log(data.find(isGbp).title + " costs " + data.find(isGbp).price + " pounds")
+}
 
 // 4: Display a list of all items who are made of wood.
 function question4 () {
@@ -42,7 +39,6 @@ function question4 () {
       console.log(dataEntry.title)
   })
 }
-
 
 // 5: Which items are made of eight or more materials?
 //    Display the name, number of items and the items it is made of.
@@ -56,7 +52,6 @@ function question5 () {
     }
   })
 }
-
 
 // 6: How many items were made by their sellers?
 // Answer:
